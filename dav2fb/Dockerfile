@@ -6,7 +6,7 @@
 ############################################################
 
 # Set the base Image
-FROM derbrummbaer/im-base-phusion1604:0.1.2
+FROM derbrummbaer/im-base-phusion1604:18.09.19
 
 # File Author / Maintainer
 MAINTAINER Sven Berger
