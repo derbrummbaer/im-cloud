@@ -1,2 +1,2 @@
 # im-cloud
-Git Repostiry ür Dockerfiles zum betreiben einer Cloud
+Git Repository für Dockerfiles zum Betreiben einer Cloud
