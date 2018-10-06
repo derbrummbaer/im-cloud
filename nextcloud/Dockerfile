@@ -46,4 +46,6 @@ COPY scripte/supervisord.conf /etc/supervisor/supervisord.conf
 # Apt Speicher leeren um das Image zu verkleinern
 RUN rm -rf /var/lib/apt/lists/*
 
+
+ENTRYPOINT ["/entrypoint.sh"]
 CMD ["/usr/bin/supervisord"]
