@@ -10,8 +10,8 @@
 #FROM nextcloud:11.0.2
 #FROM nextcloud:11.0.5
 #FROM nextcloud:12.0.3
-FROM nextcloud:13.0.4
-#FROM nextcloud:14.0.1
+#FROM nextcloud:13.0.4
+FROM nextcloud:14.0.1
 
 # File Author / Maintainer
 MAINTAINER Sven Berger
