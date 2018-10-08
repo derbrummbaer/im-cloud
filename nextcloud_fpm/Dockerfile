@@ -47,5 +47,4 @@ COPY scripte/supervisord.conf /etc/supervisor/supervisord.conf
 RUN rm -rf /var/lib/apt/lists/*
 
 
-ENTRYPOINT ["/entrypoint.sh"]
 CMD ["/usr/bin/supervisord"]
