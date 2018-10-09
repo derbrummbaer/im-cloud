@@ -11,8 +11,8 @@
 #FROM nextcloud:11.0.5
 #FROM nextcloud:12.0.3
 #FROM nextcloud:13.0.4
-#FROM nextcloud:13.0.6
-FROM nextcloud:14.0.1
+FROM nextcloud:13.0.6
+#FROM nextcloud:14.0.1
 
 # File Author / Maintainer
 MAINTAINER Sven Berger
@@ -27,7 +27,9 @@ RUN mkdir -p /usr/share/man/man1 \
         libc-client-dev \
         libkrb5-dev \
         smbclient \
-        libsmbclient-dev
+        libsmbclient-dev \
+        php-oauth \
+        && php5enmod oauth
 
 RUN docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
     && ln -s "/usr/include/$(dpkg-architecture --query DEB_BUILD_MULTIARCH)/gmp.h" /usr/include/gmp.h
