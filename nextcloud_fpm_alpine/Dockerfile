@@ -24,11 +24,12 @@ RUN mkdir -p /usr/share/man/man1 \
         ffmpeg \
         libmagickwand-dev \
         libgmp3-dev \
-        libc-client-dev \
+        imap-dev \
+        openssl-dev \
         libkrb5-dev \
         smbclient \
         libsmbclient-dev \
-        php-oauth
+        php7-oauth
 
 # RUN php5enmod oauth
 
