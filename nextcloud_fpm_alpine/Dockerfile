@@ -19,7 +19,7 @@ MAINTAINER Sven Berger
 
 # Software hinzufügen
 RUN mkdir -p /usr/share/man/man1 \
-    apk -U upgrade && apk add -t \
+    && apk -U upgrade && apk add -t \
         supervisor \
         ffmpeg \
         libmagickwand-dev \
