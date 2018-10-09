@@ -32,8 +32,8 @@ RUN mkdir -p /usr/share/man/man1 \
 
 # RUN php5enmod oauth
 
-RUN docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
-    && ln -s "/usr/include/$(dpkg-architecture --query DEB_BUILD_MULTIARCH)/gmp.h" /usr/include/gmp.h
+RUN docker-php-ext-configure imap --with-kerberos --with-imap-ssl
+RUN ln -s "/usr/include/$(dpkg-architecture --query DEB_BUILD_MULTIARCH)/gmp.h" /usr/include/gmp.h
 
 RUN docker-php-ext-install bz2 gmp imap
 
