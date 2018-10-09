@@ -26,7 +26,7 @@ RUN mkdir -p /usr/share/man/man1 \
         libgmp3-dev \
         imap-dev \
         openssl-dev \
-        libkrb5-dev \
+        krb5-dev \
         smbclient \
         libsmbclient-dev \
         php7-oauth
