@@ -29,7 +29,8 @@ RUN mkdir -p /usr/share/man/man1 \
         smbclient \
         libsmbclient-dev \
         php-oauth
-RUN php5enmod oauth
+
+# RUN php5enmod oauth
 
 RUN docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
     && ln -s "/usr/include/$(dpkg-architecture --query DEB_BUILD_MULTIARCH)/gmp.h" /usr/include/gmp.h
