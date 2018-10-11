@@ -8,8 +8,8 @@
 # Set the base Image
 #FROM linuxserver/syncthing:137
 #FROM linuxserver/syncthing:137
-FROM linuxserver/syncthing:137
 #FROM linuxserver/syncthing:137
+FROM linuxserver/syncthing:137
 #FROM linuxserver/syncthing:137
 #FROM linuxserver/syncthing:137
 
