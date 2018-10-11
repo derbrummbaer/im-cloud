@@ -6,35 +6,33 @@
 ############################################################
 
 # Set the base Image
-#FROM nextcloud:latest
-#FROM nextcloud:11.0.2-fpm
-#FROM nextcloud:11.0.5-fpm
-#FROM nextcloud:12.0.3-fpm
-#FROM nextcloud:13.0.4-fpm
-FROM nextcloud:13.0.6-fpm-alpine
-#FROM nextcloud:14.0.1-fpm-alpine
+#FROM nextcloud:fpm
+#FROM nextcloud:11.0.2
+#FROM nextcloud:11.0.5
+#FROM nextcloud:12.0.3
+#FROM nextcloud:13.0.4
+#FROM nextcloud:13.0.6
+FROM nextcloud:14.0.1
 
 # File Author / Maintainer
 MAINTAINER Sven Berger
 
 # Software hinzufügen
 RUN mkdir -p /usr/share/man/man1 \
-    && apk -U upgrade && apk add -t \
+    && apt-get update && apt-get install -y \
         supervisor \
         ffmpeg \
         libmagickwand-dev \
         libgmp3-dev \
-        imap-dev \
-        openssl-dev \
-        krb5-dev \
+        libc-client-dev \
+        libkrb5-dev \
         smbclient \
         libsmbclient-dev \
-        php7-oauth
+        php-oauth \
+        && php5enmod oauth
 
-# RUN php5enmod oauth
-
-RUN docker-php-ext-configure imap --with-kerberos --with-imap-ssl
-RUN ln -s "/usr/include/$(dpkg-architecture --query DEB_BUILD_MULTIARCH)/gmp.h" /usr/include/gmp.h
+RUN docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
+    && ln -s "/usr/include/$(dpkg-architecture --query DEB_BUILD_MULTIARCH)/gmp.h" /usr/include/gmp.h
 
 RUN docker-php-ext-install bz2 gmp imap
 
@@ -50,6 +48,5 @@ COPY scripte/supervisord.conf /etc/supervisor/supervisord.conf
 
 # Apt Speicher leeren um das Image zu verkleinern
 RUN rm -rf /var/lib/apt/lists/*
-
 
 CMD ["/usr/bin/supervisord"]
