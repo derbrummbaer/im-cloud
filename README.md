@@ -26,5 +26,5 @@ Sofern nicht anders aufgeführt ist das Image auf AMD64 gebaut
     - [X] Version: 18.07.25 - 13.0.5 / 3.3.0.3
     - [X] Version: 18.09.01 - 13.0.6 / 3.3.1.2
     - [X] Version: 18.09.12 - 14.0.0 / 3.3.1.2
-    - [ ] Version: 18.09.26 - 14.0.1 / 3.3.1.3
+    - [X] Version: 18.09.26 - 14.0.1 / 3.3.1.3
     - [ ] Version: 18.10.11 - 14.0.1 / 3.4.0.8 / 137

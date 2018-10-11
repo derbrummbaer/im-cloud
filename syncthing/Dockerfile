@@ -9,8 +9,8 @@
 #FROM linuxserver/syncthing:137
 #FROM linuxserver/syncthing:137
 #FROM linuxserver/syncthing:137
-FROM linuxserver/syncthing:137
 #FROM linuxserver/syncthing:137
+FROM linuxserver/syncthing:137
 #FROM linuxserver/syncthing:137
 
 # File Author / Maintainer
