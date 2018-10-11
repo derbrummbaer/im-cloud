@@ -5,9 +5,9 @@ Sofern nicht anders aufgeführt ist das Image auf AMD64 gebaut
 ## Images Cloud
 - [X] im-cloud-dav2fb
 - [X] im-cloud-db
-- [ ] im-cloud-nextcloud
-    - [ ] apache
-    - [ ] fpm
+- [X] im-cloud-nextcloud
+    - [X] apache
+    - [X] fpm
     - 14.0.1 : 2018.09.25
     - 14.0.0 : 2018.09.10
     - 13.0.6 : 2018.08.30
@@ -22,7 +22,7 @@ Sofern nicht anders aufgeführt ist das Image auf AMD64 gebaut
     - 3.2.0  : 2018.04.19
 
 ### Versionen
-    - [ ] Version: 18.06.20 - 13.0.4 / 3.2.2.1
+    - [X] Version: 18.06.20 - 13.0.4 / 3.2.2.1
     - [ ] Version: 18.07.25 - 13.0.5 / 3.3.0.3
     - [ ] Version: 18.09.01 - 13.0.6 / 3.3.1.2
     - [ ] Version: 18.09.12 - 14.0.0 / 3.3.1.2
