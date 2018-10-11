@@ -10,8 +10,8 @@
 #FROM collabora/code:3.3.0.3
 #FROM collabora/code:3.3.1.2
 #FROM collabora/code:3.3.1.2
-FROM collabora/code:3.3.1.3
-#FROM collabora/code:3.4.0.8
+#FROM collabora/code:3.3.1.3
+FROM collabora/code:3.4.0.8
 
 # File Author / Maintainer
 MAINTAINER Sven Berger
