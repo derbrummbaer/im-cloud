@@ -1,18 +1,17 @@
 ############################################################
-# Dockerfile to build Nextcloud FPM Image
+# Dockerfile to build Nextcloud Apache Image
 # based on Original nextcloud Image
 ############################################################
 # Container nextcloud
 ############################################################
 
 # Set the base Image
-#FROM nextcloud:fpm
-#FROM nextcloud:11.0.2
-#FROM nextcloud:11.0.5
-#FROM nextcloud:12.0.3
-#FROM nextcloud:13.0.4
+FROM nextcloud:13.0.4
+#FROM nextcloud:13.0.5
 #FROM nextcloud:13.0.6
-FROM nextcloud:14.0.1
+#FROM nextcloud:14.0.0
+#FROM nextcloud:14.0.1
+#FROM nextcloud:14.0.1
 
 # File Author / Maintainer
 MAINTAINER Sven Berger
@@ -27,9 +26,7 @@ RUN mkdir -p /usr/share/man/man1 \
         libc-client-dev \
         libkrb5-dev \
         smbclient \
-        libsmbclient-dev \
-        php-oauth \
-        && php5enmod oauth
+        libsmbclient-dev
 
 RUN docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
     && ln -s "/usr/include/$(dpkg-architecture --query DEB_BUILD_MULTIARCH)/gmp.h" /usr/include/gmp.h

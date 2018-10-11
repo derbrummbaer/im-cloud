@@ -6,8 +6,12 @@
 ############################################################
 
 # Set the base Image
-#FROM collabora/code
 FROM linuxserver/syncthing:137
+#FROM linuxserver/syncthing:137
+#FROM linuxserver/syncthing:137
+#FROM linuxserver/syncthing:137
+#FROM linuxserver/syncthing:137
+#FROM linuxserver/syncthing:137
 
 # File Author / Maintainer
 MAINTAINER Sven Berger
