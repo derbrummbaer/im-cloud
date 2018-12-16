@@ -11,7 +11,7 @@
 #FROM nextcloud:13.0.6-fpm
 #FROM nextcloud:14.0.0-fpm
 #FROM nextcloud:14.0.1-fpm
-FROM nextcloud:14.0.1-fpm
+FROM nextcloud:14.0.4-fpm
 
 # File Author / Maintainer
 MAINTAINER Sven Berger
