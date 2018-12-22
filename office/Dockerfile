@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ############################################################
 # Dockerfile to build collaboran code Image
 # based on Original collabora/code
@@ -15,3 +14,6 @@
 #FROM collabora/code:3.4.0.8
 #FROM collabora/code:3.4.1.1
 FROM collabora/code:3.4.2.1
+
+# File Author / Maintainer
+MAINTAINER Sven Berger
