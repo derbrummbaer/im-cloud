@@ -74,7 +74,7 @@ RUN set -ex; \
     \
     apt-get update; \
     apt-get install -y --no-install-recommends \
-        php-outh \
+        php-oauth \
     ; \
     pecl install oauth; \
     docker-php-ext-enable oauth; \
