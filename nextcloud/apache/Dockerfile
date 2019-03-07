@@ -28,7 +28,6 @@ RUN set -ex; \
         ffmpeg \
         smbclient \
         supervisor \
-#       libreoffice \
     ; \
     rm -rf /var/lib/apt/lists/*
 
@@ -43,6 +42,7 @@ RUN set -ex; \
         libgmp3-dev \
         libkrb5-dev \
         libsmbclient-dev \
+        libpcre++-dev \
     ; \
     \
     docker-php-ext-configure imap --with-kerberos --with-imap-ssl; \
@@ -52,8 +52,8 @@ RUN set -ex; \
         gmp \
         imap \
     ; \
-    pecl install smbclient; \
-    docker-php-ext-enable smbclient; \
+    pecl install smbclient oauth; \
+    docker-php-ext-enable smbclient oauth; \
     \
 # reset apt-mark's "manual" list so that "purge --auto-remove" will remove all build dependencies
     apt-mark auto '.*' > /dev/null; \
@@ -70,16 +70,16 @@ RUN set -ex; \
     rm -rf /var/lib/apt/lists/*
 
 ## OAuth für Grauphel
-RUN set -ex; \
-    \
-    apt-get update; \
-    apt-get install -y --no-install-recommends \
-        php-oauth \
-    ; \
-    pecl install oauth; \
-    docker-php-ext-enable oauth; \
-    \
-    rm -rf /var/lib/apt/lists/*
+# RUN set -ex; \
+#     \
+#     apt-get update; \
+#     apt-get install -y --no-install-recommends \
+#         php7.0-oauth \
+#     ; \
+#     pecl install oauth; \
+#     docker-php-ext-enable oauth; \
+#     \
+#     rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p \
     /usr/share/man/man1 \
