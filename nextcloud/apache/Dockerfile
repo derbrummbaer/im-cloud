@@ -15,7 +15,8 @@
 #FROM nextcloud:14.0.3
 #FROM nextcloud:14.0.4
 #FROM nextcloud:14.0.6
-FROM nextcloud:15.0.2
+#FROM nextcloud:15.0.2
+FROM nextcloud:15.0.5
 
 # File Author / Maintainer
 MAINTAINER Sven Berger
@@ -66,6 +67,18 @@ RUN set -ex; \
         | xargs -rt apt-mark manual; \
     \
     apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
+    rm -rf /var/lib/apt/lists/*
+
+## OAuth für Grauphel
+RUN set -ex; \
+    \
+    apt-get update; \
+    apt-get install -y --no-install-recommends \
+        php-outh \
+    ; \
+    pecl install oauth; \
+    docker-php-ext-enable oauth; \
+    \
     rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p \
