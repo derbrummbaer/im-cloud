@@ -52,8 +52,10 @@ RUN set -ex; \
         gmp \
         imap \
     ; \
-    pecl install smbclient oauth; \
-    docker-php-ext-enable smbclient oauth; \
+    pecl install smbclient; \
+#    pecl install smbclient oauth; \
+    docker-php-ext-enable smbclient; \
+#    docker-php-ext-enable smbclient oauth; \
     \
 # reset apt-mark's "manual" list so that "purge --auto-remove" will remove all build dependencies
     apt-mark auto '.*' > /dev/null; \
@@ -70,16 +72,30 @@ RUN set -ex; \
     rm -rf /var/lib/apt/lists/*
 
 ## OAuth für Grauphel
-# RUN set -ex; \
-#     \
-#     apt-get update; \
-#     apt-get install -y --no-install-recommends \
-#         php7.0-oauth \
-#     ; \
-#     pecl install oauth; \
-#     docker-php-ext-enable oauth; \
-#     \
-#     rm -rf /var/lib/apt/lists/*
+RUN set -ex; \
+    \
+    savedAptMark="$(apt-mark showmanual)"; \
+    \
+     apt-get update; \
+     apt-get install -y --no-install-recommends \
+         php7.0-oauth \
+     ; \
+     pecl install oauth; \
+     docker-php-ext-enable oauth; \
+    \
+# reset apt-mark's "manual" list so that "purge --auto-remove" will remove all build dependencies
+    apt-mark auto '.*' > /dev/null; \
+    apt-mark manual $savedAptMark; \
+    ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so \
+        | awk '/=>/ { print $3 }' \
+        | sort -u \
+        | xargs -r dpkg-query -S \
+        | cut -d: -f1 \
+        | sort -u \
+        | xargs -rt apt-mark manual; \
+    \
+    apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
+    rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p \
     /usr/share/man/man1 \
