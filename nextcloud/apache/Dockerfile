@@ -26,8 +26,10 @@ RUN set -ex; \
     apt-get update; \
     apt-get install -y --no-install-recommends \
         ffmpeg \
+        libmagickcore-6.q16-3-extra \
         smbclient \
         supervisor \
+ #      libreoffice \
     ; \
     rm -rf /var/lib/apt/lists/*
 
@@ -42,7 +44,11 @@ RUN set -ex; \
         libgmp3-dev \
         libkrb5-dev \
         libsmbclient-dev \
+        \
+# Änderung für Outh (Grauphel)
         libpcre++-dev \
+# Änderung für Outh (Grauphel)
+        \
     ; \
     \
     docker-php-ext-configure imap --with-kerberos --with-imap-ssl; \
@@ -53,38 +59,15 @@ RUN set -ex; \
         imap \
     ; \
     pecl install smbclient; \
-#    pecl install smbclient oauth; \
     docker-php-ext-enable smbclient; \
-#    docker-php-ext-enable smbclient oauth; \
     \
-# reset apt-mark's "manual" list so that "purge --auto-remove" will remove all build dependencies
+# Änderung für Outh (Grauphel)
+    pecl install oauth; \
+    docker-php-ext-enable oauth; \
+# Änderung für Outh (Grauphel)
+    \
     apt-mark auto '.*' > /dev/null; \
-    apt-mark manual $savedAptMark; \
-    ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so \
-        | awk '/=>/ { print $3 }' \
-        | sort -u \
-        | xargs -r dpkg-query -S \
-        | cut -d: -f1 \
-        | sort -u \
-        | xargs -rt apt-mark manual; \
-    \
-    apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
-    rm -rf /var/lib/apt/lists/*
-
-## OAuth für Grauphel
-RUN set -ex; \
-    \
-    savedAptMark="$(apt-mark showmanual)"; \
-    \
-     apt-get update; \
-     apt-get install -y --no-install-recommends \
-         php7.0-oauth \
-     ; \
-     pecl install oauth; \
-     docker-php-ext-enable oauth; \
-    \
 # reset apt-mark's "manual" list so that "purge --auto-remove" will remove all build dependencies
-    apt-mark auto '.*' > /dev/null; \
     apt-mark manual $savedAptMark; \
     ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so \
         | awk '/=>/ { print $3 }' \
