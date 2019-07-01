@@ -16,7 +16,8 @@
 #FROM nextcloud:14.0.4
 #FROM nextcloud:14.0.6
 #FROM nextcloud:15.0.2
-FROM nextcloud:15.0.5
+#FROM nextcloud:15.0.5
+FROM nextcloud:15.0.8
 
 # File Author / Maintainer
 MAINTAINER Sven Berger
