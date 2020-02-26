@@ -1,7 +1,7 @@
 #!/bin/bash
 
-nextcloud="18.0.1"
-ext=".0"
+nextcloud="17.0.3"
+ext=".1"
 office="4.2.0.4"
 mariadb="10.4"
 tagversion=$nextcloud$ext
