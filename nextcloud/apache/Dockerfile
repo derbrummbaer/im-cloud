@@ -23,7 +23,8 @@
 #FROM nextcloud:16.0.7
 #FROM nextcloud:16.0.8
 #FROM nextcloud:17.0.2
-FROM nextcloud:17.0.3
+#FROM nextcloud:17.0.3
+FROM nextcloud:17.0.4
 #FROM nextcloud:18.0.1
 
 
