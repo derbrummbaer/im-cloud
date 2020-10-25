@@ -1,6 +1,6 @@
 #!/bin/bash
 
-nextcloud="19.0.4"
+nextcloud="20.0.0"
 ext=".0"
 office="6.4.0.12"
 mariadb="10.5"
