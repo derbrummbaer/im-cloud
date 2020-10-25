@@ -1,9 +1,9 @@
 #!/bin/bash
 
 nextcloud="18.0.10"
-ext=".1"
-office="6.4.0.12"
-mariadb="10.4"
+ext=".01"
+office="4.2.6.2"
+mariadb="10.5"
 tagversion=$nextcloud$ext
 
 git add .
