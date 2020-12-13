@@ -29,7 +29,8 @@
 #FROM collabora/code:4.2.5.3
 #FROM collabora/code:4.2.6.2
 #FROM collabora/code:6.4.0.12
-FROM collabora/code:6.4.1.3
+#FROM collabora/code:6.4.1.3
+FROM collabora/code:6.4.2.2
 
 # File Author / Maintainer
 MAINTAINER Sven Berger
