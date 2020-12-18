@@ -38,7 +38,8 @@
 #FROM nextcloud:19.0.5
 #FROM nextcloud:20.0.0
 #FROM nextcloud:20.0.2
-FROM nextcloud:20.0.3
+#FROM nextcloud:20.0.3
+FROM nextcloud:20.0.4
 
 #
 # File Author / Maintainer
