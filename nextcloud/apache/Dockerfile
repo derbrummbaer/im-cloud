@@ -40,7 +40,8 @@
 #FROM nextcloud:20.0.2
 #FROM nextcloud:20.0.3
 #FROM nextcloud:20.0.4
-FROM nextcloud:20.0.5
+#ROM nextcloud:20.0.5
+FROM nextcloud:20.0.6
 
 #
 # File Author / Maintainer
