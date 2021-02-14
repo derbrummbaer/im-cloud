@@ -6,43 +6,13 @@
 ############################################################
 
 # Set the base Image
-#FROM nextcloud:13.0.4
-#FROM nextcloud:13.0.5
-#FROM nextcloud:13.0.6
-#FROM nextcloud:14.0.0
-#FROM nextcloud:14.0.1
-#FROM nextcloud:14.0.2
-#FROM nextcloud:14.0.3
-#FROM nextcloud:14.0.4
-#FROM nextcloud:14.0.6
-#FROM nextcloud:15.0.2
-#FROM nextcloud:15.0.5
-#FROM nextcloud:15.0.8
-#FROM nextcloud:15.0.11
-#FROM nextcloud:16.0.4
-#FROM nextcloud:16.0.7
-#FROM nextcloud:16.0.8
-#FROM nextcloud:17.0.2
-#FROM nextcloud:17.0.3
-#FROM nextcloud:17.0.4
-#FROM nextcloud:17.0.5
-#FROM nextcloud:17.0.6
-#FROM nextcloud:18.0.1
-#FROM nextcloud:18.0.3
-#FROM nextcloud:18.0.4
-#FROM nextcloud:18.0.5
-#FROM nextcloud:18.0.6
-#FROM nextcloud:18.0.7
-#FROM nextcloud:18.0.10
-#FROM nextcloud:19.0.4
-#FROM nextcloud:19.0.5
 #FROM nextcloud:20.0.0
 #FROM nextcloud:20.0.2
 #FROM nextcloud:20.0.3
 #FROM nextcloud:20.0.4
-#ROM nextcloud:20.0.5
-FROM nextcloud:20.0.6
-
+#FROM nextcloud:20.0.5
+#FROM nextcloud:20.0.6
+FROM nextcloud:20.0.7
 #
 # File Author / Maintainer
 MAINTAINER Sven Berger
